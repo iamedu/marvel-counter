@@ -27,16 +27,22 @@
       (println "An error occured, check you have internet connection and that your public and private keys are OK"))))
 
 (defn list-all []
-  (let [characters (->> (load-cache "characters.edn")
-                        (sort-by :name))]
-    (print-characters characters)))
+  (try
+    (let [characters (->> (load-cache "characters.edn")
+                          (sort-by :name))]
+      (print-characters characters)) 
+    (catch Exception _
+      (println "Check that the characters.edn file is in this directory and that it was generated correctly")  )))
 
 (defn list-popular []
-  (let [characters (->> (load-cache "characters.edn")
-                        (sort-by :available-comics)
-                        (reverse)
-                        (take 10))]
-    (print-characters characters :print-comics true)))
+  (try
+    (let [characters (->> (load-cache "characters.edn")
+                          (sort-by :available-comics)
+                          (reverse)
+                          (take 10))]
+      (print-characters characters :print-comics true)) 
+    (catch Exception _
+      (println "Check that the characters.edn file is in this directory and that it was generated correctly"))))
 
 (defn print-options []
   (println "I did not understand that, you need to specify either: fetch, list-all or list-popular")) 

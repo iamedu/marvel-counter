@@ -1,10 +1,10 @@
 # marvel-counter
 
-FIXME: description
+Simple clojure tool to get marvel character stats
 
 ## Installation
 
-Download from http://example.com/FIXME.
+You need to have the Java Virtual Machine installed.
 
 ## Usage
 
