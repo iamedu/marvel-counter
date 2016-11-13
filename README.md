@@ -5,7 +5,9 @@ Simple clojure tool to get marvel character stats
 ## Requirements
 
 REQUIRED You need to get your api key from marvel, check [http://developer.marvel.com](http://developer.marvel.com)
+
 REQUIRED You need to have Java Software Development Kit 1.8 (should work with 1.7, but it hasn't been tested). You can get it from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+
 OPTIONAL Install the leiningen build tool, if you use OS X or Linux you can probably skip this step, since some support scripts are included. In windows it is highly recommended that you install [http://leiningen.org/](leiningen) the standard way.
 
 Check that you have the JAVA_HOME environment variable, and that the javac command is in your PATH (details on how to do this depend on the shell you use, and the OS you use, so consult with your tech support team or give us specific details about your environment!)
