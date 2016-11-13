@@ -2,35 +2,80 @@
 
 Simple clojure tool to get marvel character stats
 
-## Installation
+## Requirements
 
-You need to have the Java Virtual Machine installed.
+REQUIRED You need to get your api key from marvel, check [http://developer.marvel.com](http://developer.marvel.com)
+REQUIRED You need to have Java Software Development Kit 1.8 (should work with 1.7, but it hasn't been tested). You can get it from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+OPTIONAL Install the leiningen build tool, if you use OS X or Linux you can probably skip this step, since some support scripts are included. In windows it is highly recommended that you install [http://leiningen.org/](leiningen) the standard way.
 
-## Usage
+Check that you have the JAVA_HOME environment variable, and that the javac command is in your PATH (details on how to do this depend on the shell you use, and the OS you use, so consult with your tech support team or give us specific details about your environment!)
 
-FIXME: explanation
+## 3 step guide in OS X or Linux
 
-    $ java -jar marvel-counter-0.1.0-standalone.jar [args]
+1. Run PUBLIC_KEY=blahblah PRIVATE_KEY=blahblah ./leinw run fetch
+2. Run ./leinw run list-all
+3. Run ./leinw run list-popular
 
-## Options
+Don't be worried if step 1 takes a long time the first time you run it, it's downloading the leiningen build tool and fetching all marvel characters
 
-FIXME: listing of options this app accepts.
+## Installation / Usage
 
-## Examples
+DISCLAIMER: This is supported in Linux and Mac OS X, running it in Windows should be simple, but I don't have easy access to a windows machine.
 
-...
+Normally, you would be asked to install leiningen 
 
-### Bugs
+There are two ways to run this
 
-...
+* Directly from Leiningen
+* Builder the standalone jar file first
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+### Running it directly from leiningen
 
-## License
+If you choose to use leiningen, then things are pretty simple, you just need to run this:
 
-Copyright © 2016 FIXME
+```
+./leinw run ACTION
+```
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+We explain what actions are possible later
+
+
+### Building the jar file
+
+Run:
+
+```
+./leinw uberjar
+```
+
+When this is done, you have a standalone java jar file and you can run it by doing this:
+
+```
+java -jar target/uberjar/marvel-counter-0.1.0-SNAPSHOT-standalone.jar ACTION
+```
+
+You can rename, move or do anything you want with the jar file.
+
+### Running your actions
+
+There are three possible actions:
+
+1. fetch
+2. list-all
+3. list-popular
+
+Everything should be pretty straightforward, the only thing you have to keep in mind, is that you need to pass your marvel developer credentials, and you have to do it via environment variables.
+
+So if you want to run the fetch step with leiningen you have to do:
+
+```
+PUBLIC_KEY=blahblah PRIVATE_KEY=blahblah ./leinw run fetch
+```
+
+If you want to run it using the jar file run:
+
+```
+PUBLIC_KEY=blahblah PRIVATE_KEY=blahblah java -jar target/uberjar/marvel-counter-0.1.0-SNAPSHOT-standalone.jar fetch
+```
+
+Thats about everything you have to know! enjoy!
