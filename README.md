@@ -12,9 +12,9 @@ Check that you have the JAVA_HOME environment variable, and that the javac comma
 
 ## 3 step guide in OS X or Linux
 
-1. Run PUBLIC_KEY=blahblah PRIVATE_KEY=blahblah ./leinw run fetch
-2. Run ./leinw run list-all
-3. Run ./leinw run list-popular
+1. PUBLIC_KEY=blahblah PRIVATE_KEY=blahblah ./leinw run fetch
+2. ./leinw run list-all
+3. ./leinw run list-popular
 
 Don't be worried if step 1 takes a long time the first time you run it, it's downloading the leiningen build tool and fetching all marvel characters
 
