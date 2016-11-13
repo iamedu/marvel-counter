@@ -7,6 +7,7 @@
                  [org.clojure/tools.cli "0.3.5"]
                  [aero "1.0.1"]
                  [digest "1.4.5"]
+                 [org.clojure/data.json "0.2.6"]
                  [http-kit "2.2.0"]]
   :main ^:skip-aot marvel-counter.core
   :target-path "target/%s"
