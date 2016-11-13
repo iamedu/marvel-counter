@@ -1,0 +1,2 @@
+{:public-key #env PUBLIC_KEY
+ :private-key #env PRIVATE_KEY}
